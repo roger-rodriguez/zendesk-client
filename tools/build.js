@@ -21,22 +21,22 @@ exec('babel src -d es --ignore __tests__', {
   BABEL_ENV : 'es'
 })
 
-console.log('\nBuilding zendesk.js ...')
+console.log('\nBuilding zendesk-client.js ...')
 
-exec('rollup -c -f umd -o umd/zendesk.js', {
+exec('rollup -c -f umd -o umd/zendesk-client.js', {
   BABEL_ENV : 'umd',
   NODE_ENV  : 'development'
 })
 
-console.log('\nBuilding zendesk.min.js ...')
+console.log('\nBuilding zendesk-client.min.js ...')
 
-exec('rollup -c -f umd -o umd/zendesk.min.js', {
+exec('rollup -c -f umd -o umd/zendesk-client.min.js', {
   BABEL_ENV : 'umd',
   NODE_ENV  : 'production'
 })
 
 const size = gzipSize.sync(
-  fs.readFileSync('umd/zendesk.min.js')
+  fs.readFileSync('umd/zendesk-client.min.js')
 )
 
 console.log('\ngzipped, the UMD build is %s', prettyBytes(size))

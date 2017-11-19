@@ -6,10 +6,6 @@ import search from './search';
 
 export default function createClient(options = {}){
 
-  if(!options.token){
-    console.error('token is required');
-  }
-
   warning(
     !options.token,
     'A valid token is required: createClient({token: xxxxxx})'

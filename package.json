@@ -1,5 +1,5 @@
 {
-  "name": "zendesk-js",
+  "name": "zendesk-client",
   "version": "0.0.1",
   "description": "JS library for the Zendesk API",
   "files": [
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/roger-rodriguez/zendesk-js.git"
+    "url": "git+https://github.com/roger-rodriguez/zendesk-client.git"
   },
   "keywords": [
     "zendesk",
@@ -26,9 +26,9 @@
   "author": "Roger Rodriguez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/roger-rodriguez/zendesk-js/issues"
+    "url": "https://github.com/roger-rodriguez/zendesk-client/issues"
   },
-  "homepage": "https://github.com/roger-rodriguez/zendesk-js#readme",
+  "homepage": "https://github.com/roger-rodriguez/zendesk-client#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-dev-expression": "^0.2.1",

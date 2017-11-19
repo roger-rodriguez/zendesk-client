@@ -9,7 +9,7 @@ import builtins from 'rollup-plugin-node-builtins'
 // order of plugins matters
 const config = {
   input   : './src/index.js',
-  name    : 'Zendesk',
+  name    : 'Zendesk-Client',
   plugins : [
     resolve({
       jsnext  : true,
