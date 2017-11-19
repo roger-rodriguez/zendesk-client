@@ -1,6 +1,6 @@
 {
   "name": "zendesk-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "JS library for the Zendesk API",
   "files": [
     "es",
