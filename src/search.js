@@ -1,29 +1,13 @@
-import fetch from './fetch';
+import Actions from './actions';
 
-export default (options) =>{
+export default class Search extends Actions {
 
-  return {
-    query : query.bind(null, options),
+  constructor(settings){
+    super(settings);
+  }
+
+  query(searchTerm){
+    return super.query('GET', 'search', {query : searchTerm})
   }
 
 }
-
-
-const query = (config, query) =>{
-
-  const {url, token} = config;
-  let options        = {
-    domain    : url,
-    path      : `search`,
-    query     : {
-      query : query,
-    },
-    method    : "GET",
-    authToken : token,
-  };
-
-  return fetch(options).then((res) =>{
-    return res;
-  });
-
-};

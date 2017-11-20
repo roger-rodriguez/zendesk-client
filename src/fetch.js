@@ -4,13 +4,13 @@ import Promise from 'bluebird';
 export default ({domain, path, query, method, authToken, headers, body}) =>{
 
   const options = {
-    method,
+    method  : method || 'GET',
     headers : headers || getDefaultHeaders(authToken),
     body    : body || null,
   };
 
   const url = [
-    `${domain}/api/v2/`,path,`.json`,
+    `${domain}/api/v2/`, path, `.json`,
     query ? `?${joinQuery(query)}` : ``,
   ].join('');
 
@@ -29,7 +29,7 @@ function parseStatus(status, res){
     if(status >= 200 && status < 300){
       res.then(response => resolve(response));
     } else{
-      res.then(response => {
+      res.then(response =>{
         const error = new Error(response.description);
         reject(error)
       });
@@ -39,8 +39,8 @@ function parseStatus(status, res){
 
 function getDefaultHeaders(authToken){
   const headers = {
-    'Content-Type'  : "application/json",
-    'Accept'        : "application/json",
+    'Content-Type' : "application/json",
+    'Accept'       : "application/json",
   };
   if(authToken){
     headers['Authorization'] = `Bearer ${authToken}`
