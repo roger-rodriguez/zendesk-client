@@ -11,6 +11,7 @@
   "module": "es/index.js",
   "scripts": {
     "build": "node ./tools/build.js",
+    "watch": "babel ./src -d ./lib --ignore __tests__ --watch",
     "prepublishOnly": "node ./tools/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
