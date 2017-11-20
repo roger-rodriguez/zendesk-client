@@ -2,7 +2,7 @@
   <h1>Zendesk Client</h1>
   <p>
     JS library for the Zendesk API
-  <p>
+  </p>
 </div>
 
 
@@ -15,9 +15,7 @@ npm install zendesk-client
 
 ## API Documentation
 
-```
 [Zendesk Core API](https://developer.zendesk.com/rest_api/docs/core/introduction)
-```
 
 ## Quick Start
 
