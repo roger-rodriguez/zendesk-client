@@ -7,7 +7,7 @@ import search from './search';
 export default function createClient(options = {}){
 
   warning(
-    !options.token,
+    options.token,
     'A valid token is required: createClient({token: xxxxxx})'
   );
 
