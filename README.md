@@ -24,7 +24,7 @@ import createClient from 'zendesk-client';
 
 const client = createClient({
   token : 'token',
-  url   : 'https://[yourdomain].zendesk.com',
+  url   : 'https://[yoursubdomain].zendesk.com',
 });
 
 client.search.query('type:ticket status:open status:new')
@@ -40,7 +40,11 @@ client.search.query('type:ticket status:open status:new')
 ## Attachments
 
 ```js
-client.attachments.upload(files)
+client.attachments
+```
+
+```js
+upload(files)
 
 ```
 
@@ -48,17 +52,27 @@ client.attachments.upload(files)
 
 ```js
 
-const ticket = {
-  "ticket":
-    {
-      "subject":"My printer is on fire!",
-      "comment": {
-        "body": "The smoke is very colorful."
-      }
-    }
-  };
+client.tickets
 
-client.tickets.create(ticket)
+```
+
+```js
+
+list()
+listByOrganization(orgId)
+listByUserRequested(userId)
+listByUserCCD(userId)
+listByAssigned(userId)
+listRecent()
+show(ticketId)
+showMany(ticketIds)
+create(ticket)
+createMany(tickets)
+update(ticketId, ticket)
+updateMany(ticketIds, ticket)
+delete(ticketId)
+deleteMany(ticketIds)
+getComments(ticketId)
 
 ```
 
@@ -67,6 +81,47 @@ client.tickets.create(ticket)
 
 ```js
 
-client.search.query('type:ticket status:open status:new')
+client.search
+
+```
+
+```js
+
+query(searchTerm)
+
+```
+
+## Users
+
+```js
+
+client.users
+
+```
+
+```js
+
+list()
+listByGroup(groupId)
+listByOrganization(orgId)
+show(userId)
+showMany(userIds)
+me()
+
+```
+
+## OauthTokens
+
+```js
+
+client.oauthtokens
+
+```
+
+```js
+
+list()
+show(id)
+current()
 
 ```
