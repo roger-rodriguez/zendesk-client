@@ -1,4 +1,5 @@
 import Actions from './actions';
+import fetch from './fetch';
 
 export default class Attachments extends Actions {
 
