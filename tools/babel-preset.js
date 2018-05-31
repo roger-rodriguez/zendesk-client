@@ -1,24 +1,26 @@
 const BABEL_ENV = process.env.BABEL_ENV;
-const building  = BABEL_ENV != undefined && BABEL_ENV !== 'cjs';
-const plugins   = [];
+const building = BABEL_ENV != undefined && BABEL_ENV !== "cjs";
+const plugins = [];
 
-if(BABEL_ENV === 'umd'){
-  plugins.push('external-helpers')
+if (BABEL_ENV === "umd") {
+  plugins.push("external-helpers");
 }
 
-if(process.env.NODE_ENV === 'production'){
-  plugins.push(
-    'dev-expression'
-  )
+if (process.env.NODE_ENV === "production") {
+  plugins.push("dev-expression");
 }
 
 module.exports = {
-  presets : [
-    ['es2015', {
-      loose   : true,
-      modules : building ? false : 'commonjs'
-    }],
-    'stage-1'
+  presets: [
+    [
+      "env",
+      {
+        targets: {
+          browsers: ["last 2 versions", "safari >= 7"]
+        },
+        modules: false
+      }
+    ]
   ],
-  plugins : plugins
+  plugins: plugins
 };

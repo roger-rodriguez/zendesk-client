@@ -1,21 +1,20 @@
-import Actions from './actions';
+import Actions from "./actions";
 
 export default class OauthTokens extends Actions {
-
-  constructor(settings){
+  constructor(settings) {
     super(settings);
   }
 
-  list(){
-    return super.list('GET', 'oauth/tokens')
+  list() {
+    return super.list("GET", "oauth/tokens");
   }
 
-  show(id){
-    return super.list('GET', `oauth/tokens/${id}`)
+  show(id) {
+    return super.list("GET", `oauth/tokens/${id}`);
   }
 
-  current(){
-    return super.list('GET', `oauth/tokens/current`)
+  current() {
+    return super.list("GET", `oauth/tokens/current`);
   }
 
   /**
@@ -23,12 +22,11 @@ export default class OauthTokens extends Actions {
    * @param token
    * @returns {POST}
    */
-  create(token){
-    return super.create('POST', `oauth/tokens`, token)
+  create(token) {
+    return super.create("POST", `oauth/tokens`, token);
   }
 
-  delete(id){
-    return super.delete('DELETE', `oauth/tokens/${id}`)
+  delete(id) {
+    return super.delete("DELETE", `oauth/tokens/${id}`);
   }
-
 }

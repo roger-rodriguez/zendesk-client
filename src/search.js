@@ -1,13 +1,11 @@
-import Actions from './actions';
+import Actions from "./actions";
 
 export default class Search extends Actions {
-
-  constructor(settings){
+  constructor(settings) {
     super(settings);
   }
 
-  query(searchTerm){
-    return super.query('GET', 'search', {query : searchTerm})
+  query(searchTerm) {
+    return super.query("GET", "search", { query: searchTerm });
   }
-
 }
